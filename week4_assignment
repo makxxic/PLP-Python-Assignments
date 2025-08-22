@@ -1,19 +1,20 @@
-def modify_file(input_filename, output_filename):
-    try:
-        with open(input_filename, "r") as infile:
-            content = infile.read()
-        
-        # Modify content (example: uppercase text)
-        modified_content = content.upper()
-        
-        with open(output_filename, "w") as outfile:
-            outfile.write(modified_content)
-        
-        print(f"File '{output_filename}' created successfully!")
 
+def read_file_with_error_handling():
+    filename = input("Enter the filename to read: ")
+    try:
+        with open(filename, "r") as f:
+            print("File content:\n")
+            print(f.read())
+        modified_content=f.upper
+        with open(filename2,"w") as f2:
+         f2.write(modified_content)
+         print(f"File '{f2}' created successfully!")
+       
     except FileNotFoundError:
-        print(f"Error: The file '{input_filename}' does not exist.")
+        print(f"Error: File '{filename}' not found.")
     except PermissionError:
-        print(f"Error: You don’t have permission to read/write the file.")
+        print(f"Error: You don’t have permission to read '{filename}'.")
     except Exception as e:
         print(f"Unexpected error: {e}")
+
+read_file_with_error_handling()

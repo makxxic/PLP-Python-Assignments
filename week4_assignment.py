@@ -17,5 +17,7 @@ def read_file_with_error_handling():
         print(f"Error: You don’t have permission to read '{filename}'.")
     except Exception as e:
         print(f"Unexpected error: {e}")
+    finally:
+    print("File operation completed")  
 
 read_file_with_error_handling()

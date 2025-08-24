@@ -8,6 +8,7 @@ def read_file_with_error_handling():
         modified_content=f.upper
         with open(filename2,"w") as f2:
          f2.write(modified_content)
+         print(f2.read())
          print(f"File '{f2}' created successfully!")
        
     except FileNotFoundError:
